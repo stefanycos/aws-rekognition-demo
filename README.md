@@ -1,2 +1,2 @@
 # aws-rekognition-demo
-Amazon Rekognition Demonstration
+Demonstration of AWS Rekognition

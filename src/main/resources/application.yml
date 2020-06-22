@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: aws-rekognition
+
+server:
+  port: 8088
+  
+aws:
+  accessKeyId: {your-access-key}
+  secretAccessKey: {your-secret-key}
