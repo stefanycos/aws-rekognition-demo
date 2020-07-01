@@ -1,16 +1,18 @@
 package br.com.aws.rekognition.demo.controller;
 
 import java.io.IOException;
-import java.util.List;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import br.com.aws.rekognition.demo.aws.detecttext.DetectTextService;
-import br.com.aws.rekognition.demo.controller.dto.DetectTextResponseDTO;
+import br.com.aws.rekognition.demo.controller.dto.ImageRequestDTO;
+import br.com.aws.rekognition.demo.controller.dto.ImageResponseDTO;
+import br.com.aws.rekognition.demo.domains.Image;
+import br.com.aws.rekognition.demo.mapper.ImageMapper;
+import br.com.aws.rekognition.demo.service.ImageService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -18,12 +20,16 @@ import lombok.AllArgsConstructor;
 @RequestMapping("image")
 public class ImageController {
 
-	private DetectTextService detectTextDervice;
+	private ImageService imageService;
+
+	private ImageMapper mapper;
 
 	@PostMapping
-	public DetectTextResponseDTO detectText(@RequestParam("image") MultipartFile image) throws IOException {
-		List<String> result = detectTextDervice.detectText(image.getInputStream());
-		return new DetectTextResponseDTO(result);
+	public ImageResponseDTO process(@Validated @RequestBody ImageRequestDTO payload) throws IOException { // NOSONAR
+
+		Image image = mapper.toImage(payload);
+		return imageService.processImage(image);
+
 	}
 
 }

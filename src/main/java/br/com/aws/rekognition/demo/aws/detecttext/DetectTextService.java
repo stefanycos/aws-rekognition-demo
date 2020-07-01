@@ -54,7 +54,7 @@ public class DetectTextService {
 
 			return rekognitionClient.detectText(request);
 		} catch (final Exception e) {
-			throw new DetectTextException("Error when requesting DetectText API");
+			throw new DetectTextException("Error when requesting DetectText API. " + e.getMessage());
 		}
 	}
 
