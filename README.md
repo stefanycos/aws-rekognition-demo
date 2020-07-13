@@ -9,9 +9,9 @@ Demonstration of [AWS Rekognition](https://aws.amazon.com/pt/rekognition/?blog-c
 * mvn spring-boot:run
 
 #### Usage
-__Detecting credit card number__
 <img src="https://github.com/stefanycos/aws-rekognition-demo/blob/master/src/main/resources/card-visa.png" width=250 />
-<br>
+
+__Detecting credit card number__
 * Request
 <br>*The above image was converted to base64*
 ```json
