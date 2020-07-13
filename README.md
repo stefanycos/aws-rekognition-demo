@@ -9,10 +9,10 @@ Demonstration of [AWS Rekognition](https://aws.amazon.com/pt/rekognition/?blog-c
 * mvn spring-boot:run
 
 #### Usage
-* Detecting credit card number
+__Detecting credit card number__
 <img src="https://github.com/stefanycos/aws-rekognition-demo/blob/master/src/main/resources/card-visa.png" width=250 />
 
-__Request__
+* Request
 <br>*The above image was converted to base64*
 ```json
 {
@@ -21,7 +21,7 @@ __Request__
 }
 ```
 
-__Response__
+* Response
 ```json
 {
     "number": "4000 1234 5678 9010",
@@ -29,9 +29,9 @@ __Response__
 }
 ```
 
-* Detecting full image content
+__Detecting full image content__
 
-__Request__
+* Request
 
 ```json
 {
@@ -40,7 +40,7 @@ __Request__
 }
 ```
 
-__Response__
+* Response
 ```json
 {
     "lines": [
