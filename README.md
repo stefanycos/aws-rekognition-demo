@@ -1,5 +1,5 @@
 # AWS Rekognition
-Demonstration of [AWS Rekognition](https://aws.amazon.com/pt/rekognition/?blog-cards.sort-by=item.additionalFields.createdDate&blog-cards.sort-order=desc) to detect text and get credit card numbers.
+Using [AWS Rekognition](https://aws.amazon.com/pt/rekognition/?blog-cards.sort-by=item.additionalFields.createdDate&blog-cards.sort-order=desc) to detect credit card numbers.
 
 ### Requirements
 * Maven
