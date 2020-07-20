@@ -21,5 +21,7 @@ public class ImageResponseDTO {
 	private String number;
 
 	private CreditCardBrand brand;
+	
+	private List<LabelsDTO> labels;
 
 }

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
-import br.com.aws.rekognition.demo.aws.detecttext.DetectTextService;
+import br.com.aws.rekognition.demo.aws.services.DetectTextService;
 import br.com.aws.rekognition.demo.controller.dto.ImageResponseDTO;
 import br.com.aws.rekognition.demo.domains.AnalysisType;
 import br.com.aws.rekognition.demo.domains.CreditCardBrand;

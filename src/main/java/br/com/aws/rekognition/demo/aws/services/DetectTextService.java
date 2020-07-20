@@ -1,4 +1,4 @@
-package br.com.aws.rekognition.demo.aws.detecttext;
+package br.com.aws.rekognition.demo.aws.services;
 
 import java.io.InputStream;
 import java.util.Collections;
@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import br.com.aws.rekognition.demo.aws.detecttext.exception.DetectTextException;
+import br.com.aws.rekognition.demo.aws.exception.RekognitionAnalysisException;
 import lombok.AllArgsConstructor;
 import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.services.rekognition.RekognitionClient;
@@ -54,7 +54,7 @@ public class DetectTextService {
 
 			return rekognitionClient.detectText(request);
 		} catch (final Exception e) {
-			throw new DetectTextException("Error when requesting DetectText API. " + e.getMessage());
+			throw new RekognitionAnalysisException("Error when requesting DetectText API. " + e.getMessage());
 		}
 	}
 
