@@ -9,12 +9,14 @@ import org.springframework.stereotype.Component;
 import br.com.aws.rekognition.demo.aws.exception.RekognitionAnalysisException;
 import br.com.aws.rekognition.demo.controller.dto.LabelsDTO;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.services.rekognition.RekognitionClient;
 import software.amazon.awssdk.services.rekognition.model.DetectLabelsRequest;
 import software.amazon.awssdk.services.rekognition.model.DetectLabelsResponse;
 import software.amazon.awssdk.services.rekognition.model.Image;
 
+@Slf4j
 @AllArgsConstructor
 @Component
 public class DetectLabelService {
@@ -29,6 +31,7 @@ public class DetectLabelService {
 	}
 
 	private List<LabelsDTO> extractLabels(DetectLabelsResponse response) {
+		log.info("Calling Rekognition - API Detect Labels");
 		List<LabelsDTO> result = new ArrayList<>(); //@formatter:off
 
 		response.labels().forEach(label -> 

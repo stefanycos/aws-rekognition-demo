@@ -15,7 +15,9 @@ import br.com.aws.rekognition.demo.domains.Image;
 import br.com.aws.rekognition.demo.strategy.AnalysisStrategy;
 import br.com.aws.rekognition.demo.utils.Constants;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @AllArgsConstructor
 @AnalysisStrategy(type = AnalysisType.CREDIT_CARD)
 public class CreditCard implements ImageAnalysis {
@@ -24,6 +26,7 @@ public class CreditCard implements ImageAnalysis {
 
 	@Override
 	public ImageResponseDTO process(Image image) {
+		log.info("Starting image analysis. API Detect Text");
 		List<String> result = detectTextService.detectText(image.getFile());
 
 		String number = this.getNumber(result);
